@@ -2,6 +2,9 @@ import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer';
 const imageUrl = "/image/téléchargement.jpeg";
 const image= "/image/number-1_14247762.png";
+const images = "/image/list_1625895.png";
+const contact= "image/contact-book_4203928.png";
+const skill = 'image/competency_11113863.png';
 Font.register({
   family: "Roboto-Black",
   src: '/font/Roboto-Black.ttf'
@@ -31,15 +34,15 @@ const Pdf = () => (
           {/* Experience */}
           <View style={styles.section}>
       
-            <Text  style={styles.sectionTitle}>Profil</Text>
-          
+            <Text  style={styles.sectionTitle}>Profil  <Image src={ images} style={styles.image}/></Text>
+               
             <Text style={styles.item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Text>
             <Text style={styles.itemDescription}>Lead development of innovative software solutions, contributing to company growth.</Text>
           </View>
       
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Contact</Text>
+            <Text style={styles.sectionTitle}>Contact <Image src={contact} style={styles.contacts}/></Text>
             <Text style={styles.item}>
                  telephone 
                 
@@ -52,7 +55,7 @@ const Pdf = () => (
 
           {/* Experience */}
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>competence</Text>
+            <Text style={styles.sectionTitle}>competence <Image src={skill} style={styles.skill}/></Text>
             <Text style={styles.item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Text>
             <Text style={styles.itemDescription}>Lead development of innovative software solutions, contributing to company growth.</Text>
@@ -128,6 +131,7 @@ const Pdf = () => (
       width: '50%', 
       paddingRight: 10 ,
       backgroundColor:'grey',
+  
     },
     rightColumn: {
       width: '50%',
@@ -146,6 +150,21 @@ const Pdf = () => (
       height: 20,  // ajustez la hauteur souhaitée
       width: 20,   // ajustez la largeur souhaitée
       borderRadius: '50%', 
+    },
+    skill:{ 
+      height:20,
+      width:20,
+      borderRadius:"50%",
+    },
+     contacts:{
+    height: 20,
+    width:20,
+    borderRadius:"50%"
+     },
+    image:{
+       height:20,
+       width:20,
+       borderRadius : "50%"
     },
     textContainer: {
       flex: 1

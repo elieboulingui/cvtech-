@@ -1,204 +1,346 @@
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer';
-const imageUrl = "/image/téléchargement.jpeg";
-const image= "/image/number-1_14247762.png";
-const images = "/image/list_1625895.png";
-const contact= "image/contact-book_4203928.png";
-const skill = 'image/competency_11113863.png';
+import { faL } from '@fortawesome/free-solid-svg-icons';
+
+const imageDeProfil='/image/contact-book_4203928.png'
 Font.register({
-  family: "Roboto-Black",
-  src: '/font/Roboto-Black.ttf'
+  family: "PTSans-Italic",
+  src: '/font/PTSans-Italic.ttf'
 });
 
 
-// Create and export the Pdf component
-const Pdf = () => (
-  
-    <Document>
-      <Page size="A4" style={styles.page}>
-        {/* Left column */}
-        <View style={styles.leftColumn}>
-          {/* Header */}
-          <View style={styles.header}>
-            <View style={styles.imageContainer}>
-              {/* Include the Image component */}
-              <Image src={imageUrl} style={styles.ima} />
-            </View>
-            <View style={styles.textContainer}>
-              <Text style={styles.name}>boulingui</Text>
-              <Image src={image} style={styles.imag} />
-              <Text style={styles.contact}>123 Main St, City, State | john.doe@example.com | (123) 456-7890</Text>
-            </View>
-          </View>
-  
-          {/* Experience */}
-          <View style={styles.section}>
-      
-            <Text  style={styles.sectionTitle}>Profil  <Image src={ images} style={styles.image}/></Text>
-               
-            <Text style={styles.item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Text>
-            <Text style={styles.itemDescription}>Lead development of innovative software solutions, contributing to company growth.</Text>
-          </View>
-      
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Contact <Image src={contact} style={styles.contacts}/></Text>
-            <Text style={styles.item}>
-                 telephone 
-                
-                 lieu <br />
-                 email <br />
-                 profil instagram <br />
-            </Text>
-            <Text style={styles.itemDescription}>Lead development of innovative software solutions, contributing to company growth.</Text>
-          </View>
+const images = "/image/list_1625895.png";
+const contact = "image/contact-book_4203928.png";
+const skill = 'image/competency_11113863.png';
 
-          {/* Experience */}
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>competence <Image src={skill} style={styles.skill}/></Text>
-            <Text style={styles.item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Text>
-            <Text style={styles.itemDescription}>Lead development of innovative software solutions, contributing to company growth.</Text>
+// Placeholder text (Lorem Ipsum)
+const loremIpsum = `Lorem ipsum dolor  djsbcj dc scb kd cdcnjd cBdlcNDcsdbcksd:cnvnc ,bjdc jdsc ddjbd udkjd .`;
+
+// Functional component for the PDF document
+const Pdf = () => (
+  <Document>
+    <Page size="A4" style={styles.page} wrap={false}>
+      <View>
+        <Text>BOULINGUI</Text>
+        <Text>JOSUE</Text>
+      </View>
+      <View style={styles.circule}>
+    <View style={styles.space}>
+  <View>  <Text style={styles.circuleText}>user experience designer</Text></View>
+  <View>  <Text style={styles.circuleText}>www.jwatson.com</Text></View>
+    </View>
+      </View>
+      <View style={styles.granded}>
+        <View style={styles.leftcolumn}>
+          <Text> <Image src={imageDeProfil}/> ABOUT ME</Text>
+          <View style={styles.enBasDeAboutMe}>
+            <Text style={styles.Textenlorems}> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa </Text>
+          </View>
+          <View style={styles.contact}>
+          <Text> <Image src={contact}/> CONTACT</Text>
+          <View style={styles.enBasDeAboutMe}>
+         <View>   <Text style={styles.Textenlorem}>ADRESSE:</Text>
+         <Text style={styles.Textenlorem}>12th avenue Street autralia</Text>
+         </View>
+          
+          </View>
+          <View>   <Text style={styles.Textenlorem}>Mobile</Text>
+         <Text style={styles.Textenlorem}>02800200</Text>
+         </View>
+         <View>   <Text style={styles.Textenlorem}>ADRESSE:</Text>
+         <Text style={styles.Textenlorem}>12th avenue Street autralia</Text>
+         </View>
+         <View>   <Text style={styles.Textenlorem}>Home:</Text>
+         <Text style={styles.Textenlorem}>02800200</Text>
+         </View>
+         <View>   <Text style={styles.Textenlorem}>email:</Text>
+         <Text style={styles.Textenlorem}>johnwatson@gmail.com</Text>
+         </View>
+         <View>   <Text style={styles.Textenlorem}>Website:</Text>
+         <Text style={styles.Textenlorem}>jwatson</Text>
+         </View>
+         <View>   <Text style={styles.Textenlorem}>Skype:</Text>
+         <Text style={styles.Textenlorem}>username</Text>
+         </View>
+          </View>
+          <View style={styles.contact}>
+          <Text> <Image src={skill}/>skills</Text>
+          <View style={styles.enBasDeAboutMe}>
+          </View>
+          <View style={styles.skills}>
+  <Text style={styles.Textenlorem}>Skill 01</Text>
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+</View>
+<View style={styles.skills}>
+  <Text style={styles.Textenlorem}>Skill 02</Text>
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+</View>
+<View style={styles.skills}>
+  <Text style={styles.Textenlorem}>Skill 03</Text>
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+</View>
+<View style={styles.skills}>
+  <Text style={styles.Textenlorem}>Skill 04</Text>
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+</View>
+<View style={styles.skills}>
+  <Text style={styles.Textenlorem}>Skill 05</Text>
+  
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+  <View style={styles.circle} />
+</View>
+
+
           </View>
         </View>
-  
-        {/* Right column */}
         <View style={styles.rightColumn}>
-          {/* Education */}
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>EXPERIENCE PROFESSIONNELLE</Text>
-            <Text style={styles.item}>NOM DE L ENTREPRISE | STAGE REALISE</Text>
-            <Text style={styles.itemDescription}>
-            sept 20xx - jul 20xx
-            </Text>
-            <Text style={styles.itemDescription}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Text>
-          </View>
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>EXPERIENCE PROFESSIONNELLE</Text>
-            <Text style={styles.item}>NOM DE L ENTREPRISE | STAGE REALISE</Text>
-            <Text style={styles.itemDescription}>
-            sept 20xx - jul 20xx
-            </Text>
-            <Text style={styles.itemDescription}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Text>
-          </View>
-  
-          {/* Additional Information */}
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>FORMATION</Text>
-            <Text style={styles.itemDescription}>
-          sept 20xx 
-          </Text>
-          <Text style={styles.itemDescription} >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            
-            </Text>
-          </View>
-           {/* Additional Information */}
-           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>LANGUES</Text>
-            <Text style={styles.itemDescription}>
-       
-          </Text>
-          <Text style={styles.itemDescription}>
-          Anglais: Bilingue
-            </Text>
-            <Text style={styles.itemDescription}>
-          Allemand: courant
-            </Text>
-            <Text style={styles.itemDescription}>
-          Espagnol: courant
-            </Text>
-          </View>
+        <View style={styles.section}>
+  {/* Titre de la section */}
+  <View style={styles.sectionTitle}>
+    <Image src={skill} style={styles.sectionIcon} />
+    <Text style={styles.sectionTitleText}>EXPERIENCES</Text>
+  </View>
+
+  {/* Contenu de la section */}
+  <View style={styles.section}>
+  {/* Section 1 */}
+  <View style={styles.row}>
+    <View style={styles.leftColumn}>
+      <Text style={styles.rowTextLeft}>Graphic Designer</Text>
+      <Text style={styles.rowTextLeft}>2015 - 2017</Text>
+    </View>
+    <View style={styles.rightColumn}>
+      <Text style={styles.rowTextRight}>SOFT DESIGN STUDIOS</Text>
+      <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+    </View>
+  </View>
+
+  {/* Section 2 */}
+  <View style={styles.row}>
+    <View style={styles.leftColumn}>
+      <Text style={styles.rowTextLeft}>Web Designer</Text>
+      <Text style={styles.rowTextLeft}>2015 - 2017</Text>
+    </View>
+    <View style={styles.rightColumn}>
+      <Text style={styles.rowTextRight}>SOFT DESIGN STUDIOS</Text>
+      <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+    </View>
+  </View>
+
+  {/* Section 3 */}
+  <View style={styles.row}>
+    <View style={styles.leftColumn}>
+      <Text style={styles.rowTextLeft}>Lead Designer</Text>
+      <Text style={styles.rowTextLeft}>2015 - 2017</Text>
+    </View>
+    <View style={styles.rightColumn}>
+      <Text style={styles.rowTextRight}>SOFT DESIGN STUDIOS</Text>
+      <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+    </View>
+  </View>
+</View>
+</View>
+
+          <View style={styles.contact}>     <Text> <Image src={skill}/>education</Text>
+          <View style={styles.enBasDeAboutMe}>
+          </View><View style={styles.section}>
+  {/* Section 1 */}
+  <View style={styles.row}>
+    <View style={styles.leftColumn}>
+      <Text style={styles.rowTextLeft}>Bachelor's Degree in Design</Text>
+      <Text style={styles.rowTextLeft}>2010 - 2014</Text>
+    </View>
+    <View style={styles.rightColumn}>
+      <Text style={styles.rowTextRight}>University of Design</Text>
+      <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+    </View>
+  </View>
+
+  {/* Section 2 */}
+  <View style={styles.row}>
+    <View style={styles.leftColumn}>
+      <Text style={styles.rowTextLeft}>Master's Degree in Digital Media</Text>
+      <Text style={styles.rowTextLeft}>2014 - 2016</Text>
+    </View>
+    <View style={styles.rightColumn}>
+      <Text style={styles.rowTextRight}>University of Digital Media</Text>
+      <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+    </View>
+  </View>
+
+  {/* Section 3 */}
+  <View style={styles.row}>
+    <View style={styles.leftColumn}>
+      <Text style={styles.rowTextLeft}>Certification in Web Development</Text>
+      <Text style={styles.rowTextLeft}>2017 - 2018</Text>
+    </View>
+    <View style={styles.rightColumn}>
+      <Text style={styles.rowTextRight}>Web Development Institute</Text>
+      <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+    </View>
+  </View>
+</View>
+
+<View style={styles.contact}>     <Text> <Image src={skill}/>references</Text>
+          <View style={styles.enBasDeAboutMe}>
+          </View><View style={styles.section}>
+  {/* Section 1 */}
+  <View style={styles.row}>
+    <View style={styles.leftColumn}>
+      <Text style={styles.rowTextLeft}>Bachelor's Degree in Design</Text>
+      <Text style={styles.rowTextLeft}>2010 - 2014</Text>
+    </View>
+    <View style={styles.rightColumn}>
+      <Text style={styles.rowTextRight}>University of Design</Text>
+      <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+    </View>
+  </View>
+
+</View>
+</View>
+</View>
+ 
         </View>
-      </Page>
-    </Document>
-  );
+        
+      </View>
+    </Page>
+  </Document>
+);
+
+
+
+// Styles for the PDF document
+const styles = StyleSheet.create({
+  page: {
+   fontFamily:'PTSans-Italic',
+    display:"flex", 
+    padding: 20,
+  },
+  section: {
+    marginBottom: 10,
+  },
+  row: {
+    flexDirection: 'row',
+    marginBottom: 5,
+  },
+  leftColumn: {
+    width: '50%',
+  },
+  rightColumn: {
+    width: '50%',
+    alignItems: "center",
+  },
+  rowTextLeft: {
+    fontSize: 12,
+    marginBottom: 2,
+  },
+  rowTextRight: {
+    fontSize: 12,
+    marginBottom: 2,
+  },
+  sectionTitle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  sectionIcon: {
+    width: 12,
+    height: 12,
+    marginRight: 5,
+  },
+  sectionTitleText: {
+    fontSize: 14,
+    fontWeight: 'bold',
   
-  // Create styles
-  const styles = StyleSheet.create({
-    page: { 
-    fontFamily:"Roboto-Black",
-      flexDirection: 'row', 
-      backgroundColor: '#E4E4E4',
-      padding: 20,
-    },
+  },
+  skills: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  circle: {
+    width: 8,
+    height: 8,
+    marginTop:9,
+    marginLeft:5,
+    borderRadius: 4,
+    backgroundColor: 'black',
+    marginRight: 5,
+  },
+  contact:{ 
+    marginTop:12,
+  },
+  Textenlorem:{
+    alignItems:'center',
+    marginTop:4,
+   fontSize:14,
+  },
+  Textenlorems: {
+    alignItems: 'center',
+    fontSize: 5,  
+  },
   
-    leftColumn: {
-      width: '50%', 
-      paddingRight: 10 ,
-      backgroundColor:'grey',
+  space:{
+    display: 'flex',
+    flexDirection: 'row', 
+    justifyContent: 'space-between',
+    width: '100%', 
+  },
+  circuleText: {
+    color: 'back',
+    fontWeight: 'bold',
   
-    },
-    rightColumn: {
-      width: '50%',
-      paddingLeft: 10,
-      backgroundColor:'white',
-    },
-    header: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginBottom: 20
-    },
-    imageContainer: {
-      marginRight: 10
-    },
-    imag: {
-      height: 20,  // ajustez la hauteur souhaitée
-      width: 20,   // ajustez la largeur souhaitée
-      borderRadius: '50%', 
-    },
-    skill:{ 
-      height:20,
-      width:20,
-      borderRadius:"50%",
-    },
-     contacts:{
-    height: 20,
-    width:20,
-    borderRadius:"50%"
-     },
-    image:{
-       height:20,
-       width:20,
-       borderRadius : "50%"
-    },
-    textContainer: {
-      flex: 1
-    },
-    name: {
-      fontSize: 24,
-      fontWeight: 'bold'
-    },
-    contact: {
-      fontSize: 12,
-      color: '#666',
-      marginTop: 5
-    },
-    ima:{
-      height: 50,  // ajustez la hauteur souhaitée
-      width: 50,   // ajustez la largeur souhaitée
-      borderRadius: '50%', 
-    },
-    section: {
-      marginBottom: 10
-    },
-    sectionTitle: {
-      fontSize: 16,
-      fontWeight: 'bold',
-      marginBottom: 5
-    },
-    item: {
-      fontSize: 12,
-      marginBottom: 3
-    },
-    itemDescription: {
-      fontSize: 10,
-      marginLeft: 10 
-    }
-  });
+  },circule: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 22,
+    height: 27,
+    backgroundColor: 'white',
+    width: 490,
+    borderTopWidth: 1, 
+    borderBottomWidth: 1,
+    borderColor: 'black', 
+  },
+  enBasDeAboutMe:{
+    display:"flex",
+    justifyContent:'space-between',
+    alignItems:"center",
+    marginTop:2,
+    height:27,
+    width:119,
+    borderTopWidth: 1, 
+    borderColor:"black",
+  },
+  granded:{
+   flexDirection:'row',
+   marginTop:10,
+  },
+  leftcolumn:{
+width:"50%",
+paddingRight:10,
+backgroundColor:"white",
+  },
+ 
   
-  export default Pdf;
+});
+
+export default Pdf;

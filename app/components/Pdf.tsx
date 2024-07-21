@@ -1,6 +1,5 @@
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer';
-import { faL } from '@fortawesome/free-solid-svg-icons';
 
 const imageDeProfil='/image/contact-book_4203928.png'
 Font.register({
@@ -9,20 +8,26 @@ Font.register({
 });
 
 
+Font.register({
+  family: "PTSans-Bold",
+  src: '/font/PTSans-Bold.ttf'
+});
+
+
+
 const images = "/image/list_1625895.png";
 const contact = "image/contact-book_4203928.png";
 const skill = 'image/competency_11113863.png';
 
-// Placeholder text (Lorem Ipsum)
 const loremIpsum = `Lorem ipsum dolor  djsbcj dc scb kd cdcnjd cBdlcNDcsdbcksd:cnvnc ,bjdc jdsc ddjbd udkjd .`;
 
-// Functional component for the PDF document
+
 const Pdf = () => (
   <Document>
     <Page size="A4" style={styles.page} wrap={false}>
       <View>
-        <Text>BOULINGUI</Text>
-        <Text>JOSUE</Text>
+        <Text style={styles.font}>BOULINGUI</Text>
+        <Text  style={styles.font}>JOSUE</Text> 
       </View>
       <View style={styles.circule}>
     <View style={styles.space}>
@@ -33,10 +38,15 @@ const Pdf = () => (
       <View style={styles.granded}>
         <View style={styles.leftcolumn}>
           <Text> <Image src={imageDeProfil}/> ABOUT ME</Text>
-          <View style={styles.enBasDeAboutMe}>
-            <Text style={styles.Textenlorems}> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa </Text>
-          </View>
-          <View style={styles.contact}>
+          <View style={styles.enBasDeAboutMe}></View>
+          <Text style={styles.textContainer}>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</Text>
+
+         
+       
+          
+          <View style={styles.contacts}>
           <Text> <Image src={contact}/> CONTACT</Text>
           <View style={styles.enBasDeAboutMe}>
          <View>   <Text style={styles.Textenlorem}>ADRESSE:</Text>
@@ -63,7 +73,7 @@ const Pdf = () => (
          <Text style={styles.Textenlorem}>username</Text>
          </View>
           </View>
-          <View style={styles.contact}>
+          <View style={styles.contacts}>
           <Text> <Image src={skill}/>skills</Text>
           <View style={styles.enBasDeAboutMe}>
           </View>
@@ -79,9 +89,9 @@ const Pdf = () => (
   <Text style={styles.Textenlorem}>Skill 02</Text>
   <View style={styles.circle} />
   <View style={styles.circle} />
-  <View style={styles.circle} />
-  <View style={styles.circle} />
-  <View style={styles.circle} />
+  <View style={styles.circles} />
+  <View style={styles.circles} />
+  <View style={styles.circles} />
 </View>
 <View style={styles.skills}>
   <Text style={styles.Textenlorem}>Skill 03</Text>
@@ -89,24 +99,24 @@ const Pdf = () => (
   <View style={styles.circle} />
   <View style={styles.circle} />
   <View style={styles.circle} />
-  <View style={styles.circle} />
+  <View style={styles.circles} />
 </View>
 <View style={styles.skills}>
   <Text style={styles.Textenlorem}>Skill 04</Text>
   <View style={styles.circle} />
   <View style={styles.circle} />
   <View style={styles.circle} />
-  <View style={styles.circle} />
-  <View style={styles.circle} />
+  <View style={styles.circles} />
+  <View style={styles.circles} />
 </View>
 <View style={styles.skills}>
   <Text style={styles.Textenlorem}>Skill 05</Text>
   
   <View style={styles.circle} />
   <View style={styles.circle} />
-  <View style={styles.circle} />
-  <View style={styles.circle} />
-  <View style={styles.circle} />
+  <View style={styles.circles} />
+  <View style={styles.circles} />
+  <View style={styles.circles} />
 </View>
 
 
@@ -122,6 +132,7 @@ const Pdf = () => (
 
   {/* Contenu de la section */}
   <View style={styles.section}>
+  <View style={styles.enBasDeAboutMes}></View>
   {/* Section 1 */}
   <View style={styles.row}>
     <View style={styles.leftColumn}>
@@ -161,7 +172,7 @@ const Pdf = () => (
 </View>
 
           <View style={styles.contact}>     <Text> <Image src={skill}/>education</Text>
-          <View style={styles.enBasDeAboutMe}>
+          <View style={styles.enBasDeAboutMes}>
           </View><View style={styles.section}>
   {/* Section 1 */}
   <View style={styles.row}>
@@ -201,7 +212,7 @@ const Pdf = () => (
 </View>
 
 <View style={styles.contact}>     <Text> <Image src={skill}/>references</Text>
-          <View style={styles.enBasDeAboutMe}>
+          <View style={styles.enBasDeAboutMes}>
           </View><View style={styles.section}>
   {/* Section 1 */}
   <View style={styles.row}>
@@ -228,15 +239,24 @@ const Pdf = () => (
 
 
 
-// Styles for the PDF document
+
 const styles = StyleSheet.create({
   page: {
    fontFamily:'PTSans-Italic',
     display:"flex", 
     padding: 20,
   },
+  font:{fontFamily:'PTSans-Bold',
+    letterSpacing:12,
+  },
   section: {
-    marginBottom: 10,
+    marginBottom: 5,
+  },
+  contacts:{
+    marginTop:29 ,
+  },
+  contact:{
+    marginBottom:1,
   },
   row: {
     flexDirection: 'row',
@@ -244,10 +264,12 @@ const styles = StyleSheet.create({
   },
   leftColumn: {
     width: '50%',
+    
   },
   rightColumn: {
     width: '50%',
     alignItems: "center",
+    
   },
   rowTextLeft: {
     fontSize: 12,
@@ -279,25 +301,44 @@ const styles = StyleSheet.create({
   circle: {
     width: 8,
     height: 8,
-    marginTop:9,
+    marginTop:20,
     marginLeft:5,
     borderRadius: 4,
     backgroundColor: 'black',
     marginRight: 5,
   },
-  contact:{ 
-    marginTop:12,
+  circles: {
+    width: 8,
+    height: 8,
+    marginTop:20,
+    marginLeft:5,
+    borderRadius: 4,
+    backgroundColor: 'grey',
+    marginRight: 5,
   },
+
   Textenlorem:{
     alignItems:'center',
-    marginTop:4,
+    marginTop:12,
    fontSize:14,
   },
   Textenlorems: {
-    alignItems: 'center',
-    fontSize: 5,  
+    alignItems:'center',
+    marginTop:12,
+   fontSize:10,
   },
-  
+  textContainer: {
+   fontSize:15,
+    borderWidth: 1,
+    borderColor: "white", 
+    marginRight: 67,  
+    borderRadius: 10,
+    width: '80%',  
+    alignSelf: 'center', 
+    marginLeft:10,
+    display:'flex',
+    justifyContent:'flex-start'
+  },
   space:{
     display: 'flex',
     flexDirection: 'row', 
@@ -315,7 +356,7 @@ const styles = StyleSheet.create({
     marginTop: 22,
     height: 27,
     backgroundColor: 'white',
-    width: 490,
+    width: 530,
     borderTopWidth: 1, 
     borderBottomWidth: 1,
     borderColor: 'black', 
@@ -326,13 +367,23 @@ const styles = StyleSheet.create({
     alignItems:"center",
     marginTop:2,
     height:27,
-    width:119,
+    width:129,
+    borderTopWidth: 1, 
+    borderColor:"black",
+  },
+  enBasDeAboutMes:{
+    display:"flex",
+    justifyContent:'space-between',
+    alignItems:"center",
+    marginTop:2,
+    height:27,
+    width:319,
     borderTopWidth: 1, 
     borderColor:"black",
   },
   granded:{
    flexDirection:'row',
-   marginTop:10,
+   marginTop:20,
   },
   leftcolumn:{
 width:"50%",

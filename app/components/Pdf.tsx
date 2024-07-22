@@ -13,11 +13,20 @@ Font.register({
   src: '/font/PTSans-Bold.ttf'
 });
 
+Font.register({
+  family: "Roboto-Black",
+  src: '/font/Roboto-Black.ttf'
+});
 
 
-const images = "/image/list_1625895.png";
+
+
+const images = "/image/a.png";
 const contact = "image/contact-book_4203928.png";
-const skill = 'image/competency_11113863.png';
+const skill = 'image/skills.png';
+const EXPERIENCE="image/71200.png";
+const education="image/education.jpg";
+const note ="image/note.png";
 
 const loremIpsum = `Lorem ipsum dolor  djsbcj dc scb kd cdcnjd cBdlcNDcsdbcksd:cnvnc ,bjdc jdsc ddjbd udkjd .`;
 
@@ -31,13 +40,13 @@ const Pdf = () => (
       </View>
       <View style={styles.circule}>
     <View style={styles.space}>
-  <View>  <Text style={styles.circuleText}>user experience designer</Text></View>
-  <View>  <Text style={styles.circuleText}>www.jwatson.com</Text></View>
+  <View>  <Text style={styles.circuleText}>USER EXPERIENCE DESIGNER</Text></View>
+  <View>  <Text style={styles.circuleTexts}>www.jwatson.com</Text></View>
     </View>
       </View>
       <View style={styles.granded}>
         <View style={styles.leftcolumn}>
-          <Text> <Image src={imageDeProfil}/> ABOUT ME</Text>
+          <Text  style={styles.sectionTitleTexts}> <Image src={images} style={styles.sectionIcons}/> ABOUT ME</Text>
           <View style={styles.enBasDeAboutMe}></View>
           <Text style={styles.textContainer}>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -47,34 +56,32 @@ const Pdf = () => (
        
           
           <View style={styles.contacts}>
-          <Text> <Image src={contact}/> CONTACT</Text>
+          <Text  style={styles.sectionTitleTexts}> <Image src={contact} style={styles.sectionIcons}/> CONTACT</Text>
           <View style={styles.enBasDeAboutMe}>
-         <View>   <Text style={styles.Textenlorem}>ADRESSE:</Text>
-         <Text style={styles.Textenlorem}>12th avenue Street autralia</Text>
-         </View>
           
           </View>
-          <View>   <Text style={styles.Textenlorem}>Mobile</Text>
-         <Text style={styles.Textenlorem}>02800200</Text>
+    
+          <View>   <Text style={styles.Textenloremn}>Mobile</Text>
+         <Text style={styles.Textenloremn}>02800200</Text>
          </View>
-         <View>   <Text style={styles.Textenlorem}>ADRESSE:</Text>
-         <Text style={styles.Textenlorem}>12th avenue Street autralia</Text>
+         <View>   <Text style={styles.Textenloremn}>ADRESSE:</Text>
+         <Text style={styles.Textenloremn}>12th avenue Street autralia</Text>
          </View>
-         <View>   <Text style={styles.Textenlorem}>Home:</Text>
-         <Text style={styles.Textenlorem}>02800200</Text>
+         <View>   <Text style={styles.Textenloremn}>Home:</Text>
+         <Text style={styles.Textenloremn}>02800200</Text>
          </View>
-         <View>   <Text style={styles.Textenlorem}>email:</Text>
-         <Text style={styles.Textenlorem}>johnwatson@gmail.com</Text>
+         <View>   <Text style={styles.Textenloremn}>email:</Text>
+         <Text style={styles.Textenloremn}>johnwatson@gmail.com</Text>
          </View>
-         <View>   <Text style={styles.Textenlorem}>Website:</Text>
-         <Text style={styles.Textenlorem}>jwatson</Text>
+         <View>   <Text style={styles.Textenloremn}>Website:</Text>
+         <Text style={styles.Textenloremn}>jwatson</Text>
          </View>
-         <View>   <Text style={styles.Textenlorem}>Skype:</Text>
-         <Text style={styles.Textenlorem}>username</Text>
+         <View>   <Text style={styles.Textenloremn}>Skype:</Text>
+         <Text style={styles.Textenloremn}>username</Text>
          </View>
           </View>
-          <View style={styles.contacts}>
-          <Text> <Image src={skill}/>skills</Text>
+          <View style={styles.contactss}>
+          <Text style={styles.sectionTitleTexts}> <Image src={skill} style={styles.sectionIcons}/>SKILLS </Text>
           <View style={styles.enBasDeAboutMe}>
           </View>
           <View style={styles.skills}>
@@ -126,8 +133,8 @@ const Pdf = () => (
         <View style={styles.section}>
   {/* Titre de la section */}
   <View style={styles.sectionTitle}>
-    <Image src={skill} style={styles.sectionIcon} />
-    <Text style={styles.sectionTitleText}>EXPERIENCES</Text>
+   
+    <Text style={styles.sectionTitleText}>  <Image src={EXPERIENCE} style={styles.sectionIcon} /> EXPERIENCES</Text>
   </View>
 
   {/* Contenu de la section */}
@@ -135,93 +142,93 @@ const Pdf = () => (
   <View style={styles.enBasDeAboutMes}></View>
   {/* Section 1 */}
   <View style={styles.row}>
-    <View style={styles.leftColumn}>
+    <View style={styles.leftcolumns}>
       <Text style={styles.rowTextLeft}>Graphic Designer</Text>
       <Text style={styles.rowTextLeft}>2015 - 2017</Text>
     </View>
     <View style={styles.rightColumn}>
-      <Text style={styles.rowTextRight}>SOFT DESIGN STUDIOS</Text>
+      <Text style={styles.rowTextRights}>SOFT DESIGN STUDIOS</Text>
       <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
     </View>
   </View>
 
   {/* Section 2 */}
   <View style={styles.row}>
-    <View style={styles.leftColumn}>
+    <View style={styles.leftcolumns}>
       <Text style={styles.rowTextLeft}>Web Designer</Text>
       <Text style={styles.rowTextLeft}>2015 - 2017</Text>
     </View>
     <View style={styles.rightColumn}>
-      <Text style={styles.rowTextRight}>SOFT DESIGN STUDIOS</Text>
+      <Text style={styles.rowTextRights}>SOFT DESIGN STUDIOS</Text>
       <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
     </View>
   </View>
 
   {/* Section 3 */}
   <View style={styles.row}>
-    <View style={styles.leftColumn}>
+    <View style={styles.leftcolumns}>
       <Text style={styles.rowTextLeft}>Lead Designer</Text>
       <Text style={styles.rowTextLeft}>2015 - 2017</Text>
     </View>
     <View style={styles.rightColumn}>
-      <Text style={styles.rowTextRight}>SOFT DESIGN STUDIOS</Text>
+      <Text style={styles.rowTextRights}>SOFT DESIGN STUDIOS</Text>
       <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
     </View>
   </View>
 </View>
 </View>
 
-          <View style={styles.contact}>     <Text> <Image src={skill}/>education</Text>
+          <View style={styles.contacts}>     <Text  style={styles.sectionTitleText}> <Image src={education} style={styles.sectionIcon} /> EDUCATION</Text>
           <View style={styles.enBasDeAboutMes}>
           </View><View style={styles.section}>
   {/* Section 1 */}
   <View style={styles.row}>
-    <View style={styles.leftColumn}>
-      <Text style={styles.rowTextLeft}>Bachelor's Degree in Design</Text>
-      <Text style={styles.rowTextLeft}>2010 - 2014</Text>
+    <View style={styles.leftcolumns}>
+      <Text style={styles.rowTextLeft}>Graphic Designer</Text>
+      <Text style={styles.rowTextLeft}>2015 - 2017</Text>
     </View>
     <View style={styles.rightColumn}>
-      <Text style={styles.rowTextRight}>University of Design</Text>
+      <Text style={styles.rowTextRights}>SOFT DESIGN STUDIOS</Text>
       <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
     </View>
   </View>
 
   {/* Section 2 */}
   <View style={styles.row}>
-    <View style={styles.leftColumn}>
-      <Text style={styles.rowTextLeft}>Master's Degree in Digital Media</Text>
-      <Text style={styles.rowTextLeft}>2014 - 2016</Text>
+    <View style={styles.leftcolumns}>
+      <Text style={styles.rowTextLeft}>Web Designer</Text>
+      <Text style={styles.rowTextLeft}>2015 - 2017</Text>
     </View>
     <View style={styles.rightColumn}>
-      <Text style={styles.rowTextRight}>University of Digital Media</Text>
+      <Text style={styles.rowTextRights}>SOFT DESIGN STUDIOS</Text>
       <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
     </View>
   </View>
 
   {/* Section 3 */}
   <View style={styles.row}>
-    <View style={styles.leftColumn}>
-      <Text style={styles.rowTextLeft}>Certification in Web Development</Text>
-      <Text style={styles.rowTextLeft}>2017 - 2018</Text>
+    <View style={styles.leftcolumns}>
+      <Text style={styles.rowTextLeft}>Lead Designer</Text>
+      <Text style={styles.rowTextLeft}>2015 - 2017</Text>
     </View>
     <View style={styles.rightColumn}>
-      <Text style={styles.rowTextRight}>Web Development Institute</Text>
+      <Text style={styles.rowTextRights}>SOFT DESIGN STUDIOS</Text>
       <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
     </View>
   </View>
 </View>
 
-<View style={styles.contact}>     <Text> <Image src={skill}/>references</Text>
+<View style={styles.contacts} >     <Text  style={styles.sectionTitleText}> <Image src={note}  style={styles.sectionIcon}/> REFERENCES</Text>
           <View style={styles.enBasDeAboutMes}>
           </View><View style={styles.section}>
   {/* Section 1 */}
   <View style={styles.row}>
-    <View style={styles.leftColumn}>
+    <View style={styles.leftcolumns}>
       <Text style={styles.rowTextLeft}>Bachelor's Degree in Design</Text>
       <Text style={styles.rowTextLeft}>2010 - 2014</Text>
     </View>
     <View style={styles.rightColumn}>
-      <Text style={styles.rowTextRight}>University of Design</Text>
+      <Text style={styles.rowTextRights}>University of Design</Text>
       <Text style={styles.rowTextRight}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
     </View>
   </View>
@@ -242,7 +249,7 @@ const Pdf = () => (
 
 const styles = StyleSheet.create({
   page: {
-   fontFamily:'PTSans-Italic',
+    fontFamily:"PTSans-Italic",
     display:"flex", 
     padding: 20,
   },
@@ -253,12 +260,20 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   contacts:{
-    marginTop:29 ,
+    fontFamily:'PTSans-Bold',
+    marginTop:19 ,
+    
+  },
+  contactss:{
+    fontFamily:'PTSans-Bold',
+    marginTop:34 ,
+    
   },
   contact:{
     marginBottom:1,
   },
   row: {
+   
     flexDirection: 'row',
     marginBottom: 5,
   },
@@ -266,17 +281,31 @@ const styles = StyleSheet.create({
     width: '50%',
     
   },
+  
   rightColumn: {
-    width: '50%',
+    width: '70%',
+
+    
     alignItems: "center",
     
   },
   rowTextLeft: {
     fontSize: 12,
+    marginLeft:39,
     marginBottom: 2,
+    fontFamily:"PTSans-Italic",
+  },
+  rowTextRights:{
+    fontSize: 12,
+   marginRight:46,
+    fontFamily:"PTSans-Italic",
+       marginBottom: 2,
   },
   rowTextRight: {
     fontSize: 12,
+ marginLeft:56,
+ marginTop:10,
+    fontFamily:"PTSans-Italic",
     marginBottom: 2,
   },
   sectionTitle: {
@@ -285,12 +314,26 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   sectionIcon: {
-    width: 12,
-    height: 12,
-    marginRight: 5,
+    width: 10,
+    marginLeft:10,
+    height: 14,
+
   },
+  sectionIcons: {
+    width: 14,
+    height: 14,
+  },
+ 
   sectionTitleText: {
     fontSize: 14,
+  paddingLeft:28,
+    fontFamily:"PTSans-Bold",
+    fontWeight: 'bold',
+  
+  },
+  sectionTitleTexts:{
+    fontSize: 14,
+    fontFamily:"PTSans-Bold",
     fontWeight: 'bold',
   
   },
@@ -327,11 +370,17 @@ const styles = StyleSheet.create({
     marginTop:12,
    fontSize:10,
   },
+  Textenloremn:{
+    alignItems:'center',
+    marginTop:6,
+   fontSize:10,
+  },
   textContainer: {
-   fontSize:15,
+    fontFamily:"PTSans-Italic",
+   fontSize: 12,
     borderWidth: 1,
     borderColor: "white", 
-    marginRight: 67,  
+    marginRight: 37,  
     borderRadius: 10,
     width: '80%',  
     alignSelf: 'center', 
@@ -347,6 +396,18 @@ const styles = StyleSheet.create({
   },
   circuleText: {
     color: 'back',
+    letterSpacing:3,
+    fontFamily:"PTSans-Bold",
+    fontSize:12,
+    marginTop:6,
+  
+  },
+  circuleTexts: {
+    marginTop:6,
+    color: 'grey',
+    fontSize:9,
+    fontFamily:"PTSans-Bold",
+    letterSpacing:3,
     fontWeight: 'bold',
   
   },circule: {
@@ -362,22 +423,20 @@ const styles = StyleSheet.create({
     borderColor: 'black', 
   },
   enBasDeAboutMe:{
-    display:"flex",
-    justifyContent:'space-between',
+
     alignItems:"center",
-    marginTop:2,
+    marginTop:8,
     height:27,
     width:129,
     borderTopWidth: 1, 
     borderColor:"black",
   },
   enBasDeAboutMes:{
-    display:"flex",
-    justifyContent:'space-between',
     alignItems:"center",
+    marginLeft:34,
     marginTop:2,
     height:27,
-    width:319,
+    width:349,
     borderTopWidth: 1, 
     borderColor:"black",
   },
@@ -386,10 +445,15 @@ const styles = StyleSheet.create({
    marginTop:20,
   },
   leftcolumn:{
-width:"50%",
+width:"30%",
 paddingRight:10,
 backgroundColor:"white",
   },
+  leftcolumns:{
+    width:"30%",
+    paddingRight:10,
+    backgroundColor:"white",
+      },
  
   
 });

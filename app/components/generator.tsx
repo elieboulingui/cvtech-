@@ -1,12 +1,11 @@
-// generatePDF.tsx
 import React from 'react';
-import ReactPDF from '@react-pdf/renderer';
-import MyDocument from './Pdf';
+import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer';
 
-ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`)
-  .then(() => {
-    console.log('PDF généré avec succès!');
-  })
-  .catch((error) => {
-    console.error('Erreur lors de la génération du PDF:', error);
-  });
+const MyDocument = () => (
+  <Document>
+    <Page>
+      <Text>React-pdf</Text>
+    </Page>
+  </Document>
+);
+export default MyDocument;

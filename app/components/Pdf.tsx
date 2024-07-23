@@ -1,3 +1,4 @@
+"use client "; 
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer';
 
@@ -5,43 +6,38 @@ Font.register({
   family: "PTSans-Italic",
   src: '/font/PTSans-Italic.ttf'
 });
-
-
 Font.register({
   family: "PTSans-Bold",
   src: '/font/PTSans-Bold.ttf'
 });
-
 Font.register({
   family: "Roboto-Black",
   src: '/font/Roboto-Black.ttf'
 });
-
 const images = "/image/a.png";
 const contact = "image/contact-book_4203928.png";
 const skill = 'image/skills.png';
 const EXPERIENCE="image/71200.png";
 const education="image/education.jpg";
 const note ="image/note.png";
-
 interface PdfProps {
   nom: string;
 }
-
 const Pdf: React.FC<PdfProps> = ({ nom }) =>(
   <Document >
     <Page size="A4" style={styles.page} wrap={false}>
+
     <Image src={note} style={styles.image} />
       <View>
         <Text style={styles.font}>BOULINGUI</Text>
-        <Text style={styles.font}>JOSUE</Text>
+        <Text style={styles.font}>JOSUE {nom}</Text>
       </View>
       <View style={styles.circule}>
     
         <View style={styles.space}>
           <View>  <Text style={styles.circuleText}>USER EXPERIENCE DESIGNER</Text></View>
        
-          <View>  <Text style={styles.circuleTexts}>www.jwatson.com</Text></View>
+          <View>  <Text style={styles.circuleTexts}>www.boulingui.com</Text></View>
         </View>
       </View>
       <View style={styles.granded}>
@@ -126,8 +122,6 @@ const Pdf: React.FC<PdfProps> = ({ nom }) =>(
               <View style={styles.circles} />
               <View style={styles.circles} />
             </View>
-
-
           </View>
         </View>
         
@@ -238,13 +232,12 @@ const Pdf: React.FC<PdfProps> = ({ nom }) =>(
                     <Text style={styles.rowTextLeft}>email : willan@gmail.com</Text>
                   </View>
                   <View style={styles.rightColumn}>
-                    <Text  style={styles.sectionTitleText}>JENSEN SMITH</Text>
+                    <Text  style={styles.sectionTitleText}>SIMBOU BOULINGUI JUDITH</Text>
                     <Text style={styles.rowTextRight}>DIRECTOR , Matrix media limited</Text>
                     <Text style={styles.rowTextRight}>DIRECTOR , Matrix media limited</Text>
                     <Text style={styles.rowTextRight}>DIRECTOR , Matrix media limited</Text>
                   </View>
                 </View>
-
               </View>
             </View>
           </View>
@@ -253,10 +246,6 @@ const Pdf: React.FC<PdfProps> = ({ nom }) =>(
     </Page>
   </Document>
 );
-
-
-
-
 const styles = StyleSheet.create({
   page: {
     fontFamily:"PTSans-Italic",
@@ -266,22 +255,19 @@ const styles = StyleSheet.create({
   font:{fontFamily:'PTSans-Bold',
     letterSpacing:12,
   },
- 
   cv: {
     fontFamily: 'PTSans-Bold',
     opacity: 0.2,
-    color: 'red',
+    color: 'red', 
+    letterSpacing:12,
     fontWeight: 'bold',
     position: 'absolute',
-    marginTop: 563,
+    marginTop: 695,
     paddingRight: 900,
     transform: 'rotate(-67deg)',
     transformOrigin: 'top left',
-    fontSize: '154px',
-    zIndex: 1  
+    fontSize: '194px',
   },
-  
-  
   section: {
     marginBottom: 5,
   },

@@ -7,9 +7,6 @@ const Home = () => {
   const [nom, setNom] = useState('');
   const [overlayVisible, setOverlayVisible] = useState(false);
 
- 
-
-
   return (
     <main className="w-screen h-screen">
      

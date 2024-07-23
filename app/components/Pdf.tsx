@@ -1,7 +1,6 @@
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer';
 
-const imageDeProfil='/image/contact-book_4203928.png'
 Font.register({
   family: "PTSans-Italic",
   src: '/font/PTSans-Italic.ttf'
@@ -25,7 +24,6 @@ const EXPERIENCE="image/71200.png";
 const education="image/education.jpg";
 const note ="image/note.png";
 
-const loremIpsum = `Lorem ipsum dolor  djsbcj dc scb kd cdcnjd cBdlcNDcsdbcksd:cnvnc ,bjdc jdsc ddjbd udkjd .`;
 interface PdfProps {
   nom: string;
 }
@@ -36,7 +34,7 @@ const Pdf: React.FC<PdfProps> = ({ nom }) =>(
     <Image src={note} style={styles.image} />
       <View>
         <Text style={styles.font}>BOULINGUI</Text>
-        <Text style={styles.font}>{nom}</Text>
+        <Text style={styles.font}>JOSUE</Text>
       </View>
       <View style={styles.circule}>
     
@@ -51,6 +49,7 @@ const Pdf: React.FC<PdfProps> = ({ nom }) =>(
           <Text style={styles.sectionTitleTexts}> <Image src={images} style={styles.sectionIcons} /> ABOUT ME</Text>
           <View style={styles.enBasDeAboutMe}></View>
           <Text style={styles.textContainer}>
+     
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Text>
 
@@ -63,7 +62,7 @@ const Pdf: React.FC<PdfProps> = ({ nom }) =>(
 
             </View>
 
-            <View>   <Text style={styles.Textenloremn}>Mobile</Text>
+            <View>   <Text style={styles.Textenloremn}>Mobile:</Text>
               <Text style={styles.Textenloremn}>02800200</Text>
             </View>
             <View>   <Text style={styles.Textenloremn}>ADRESSE:</Text>
@@ -234,12 +233,12 @@ const Pdf: React.FC<PdfProps> = ({ nom }) =>(
                 {/* Section 1 */}
                 <View style={styles.row}>
                   <View style={styles.leftcolumns}>
-                    <Text style={styles.rowTextLeft}>WILLIAM KLEIMAM</Text>
+                    <Text style={styles.sectionTitleText}>WILLIAM KLEIMAM</Text>
                     <Text style={styles.rowTextLeft}>phone +5551235566</Text>
                     <Text style={styles.rowTextLeft}>email : willan@gmail.com</Text>
                   </View>
                   <View style={styles.rightColumn}>
-                    <Text style={styles.rowTextRights}>JENSEN SMITH</Text>
+                    <Text  style={styles.sectionTitleText}>JENSEN SMITH</Text>
                     <Text style={styles.rowTextRight}>DIRECTOR , Matrix media limited</Text>
                     <Text style={styles.rowTextRight}>DIRECTOR , Matrix media limited</Text>
                     <Text style={styles.rowTextRight}>DIRECTOR , Matrix media limited</Text>
@@ -275,11 +274,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     position: 'absolute',
     marginTop: 563,
-    paddingRight:700,
+    paddingRight: 900,
     transform: 'rotate(-67deg)',
     transformOrigin: 'top left',
-    fontSize: '154px' 
+    fontSize: '154px',
+    zIndex: 1  
   },
+  
   
   section: {
     marginBottom: 5,
@@ -315,6 +316,7 @@ const styles = StyleSheet.create({
     
   },
   rowTextLeft: {
+    zIndex:0,
     fontSize: 12,
     marginLeft:39,
     marginBottom: 2,
@@ -477,17 +479,16 @@ backgroundColor:"white",
   leftcolumns:{
     width:"30%",
     paddingRight:10,
-    backgroundColor:"white",
       },
      
       image: {
-        width: '100%',  // Largeur de l'image pour couvrir toute la largeur de la page
-        height: '100%', // Hauteur de l'image pour couvrir toute la hauteur de la page
-        objectFit: 'cover', // Assure que l'image couvre complètement la zone définie
-        position: 'absolute', // Position absolue pour superposer l'image
-        top: 0, // Aligner l'image en haut
-        left: 0, // Aligner l'image à gauche
-        opacity: 0, // Rend l'image invisible
+        width: '100%',  
+        height: '100%',
+        objectFit: 'cover',
+        position: 'absolute', 
+        top: 0, 
+        left: 0,
+        opacity: 0,
       },
 });
 
